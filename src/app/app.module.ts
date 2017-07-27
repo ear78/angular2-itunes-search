@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
 import { JsonpModule, Jsonp, Response } from '@angular/http';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/toPromise';
 
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';

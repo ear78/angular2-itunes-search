@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { RouterModule, Router, ActivatedRoute, Routes } from '@angular/router';
+import {JsonpModule, Jsonp, Response} from '@angular/http';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/toPromise';
+
 
 @Component({
   selector: 'app-header',
@@ -8,7 +12,10 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private route: ActivatedRoute) {
+                this.route.params.subscribe( params => console.log(params));
+              }
 
   ngOnInit() {
   }
